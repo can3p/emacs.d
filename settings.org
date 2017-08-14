@@ -103,11 +103,41 @@
     :init
     (global-undo-tree-mode))
 
+  ;; leader mode should be loaded before evil to work everywhere
+  (use-package evil-leader
+    :ensure t
+    :config (progn
+              (global-evil-leader-mode)
+              (evil-leader/set-leader "<SPC>")
+              ))
+
+  (evil-leader/set-key
+    "be" 'find-file
+    "bb" 'switch-to-buffer
+    "bk" 'kill-buffer)
+
   (use-package evil
     :ensure t
     :config (progn
               (add-to-list 'load-path "~/.emacs.d/evil")
               (evil-mode 1)))
+
+  ;; commenting things
+  (use-package evil-nerd-commenter
+    :ensure t
+    :config (progn
+              (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+              (evil-leader/set-key
+                "ci" 'evilnc-comment-or-uncomment-lines
+                "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+                "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+                "cc" 'evilnc-copy-and-comment-lines ; Or use `evilnc-comment-and-kill-ring-save' instead
+                "cp" 'evilnc-comment-or-uncomment-paragraphs
+                "cr" 'comment-or-uncomment-region
+                "cv" 'evilnc-toggle-invert-comment-line-by-line
+                "."  'evilnc-copy-and-comment-operator
+                "\\" 'evilnc-comment-operator)
+              ))
 
   ;; argument motion
   (use-package evil-args

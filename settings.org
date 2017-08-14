@@ -139,6 +139,14 @@
                 "\\" 'evilnc-comment-operator)
               ))
 
+  ;; replace selection
+  (use-package evil-mark-replace
+    :ensure t
+    :config (progn
+              (evil-leader/set-key
+                "sr" 'evilmr-replace-in-buffer
+              )))
+
   ;; argument motion
   (use-package evil-args
     :ensure t

@@ -9,8 +9,20 @@
   (setq make-backup-files nil)
   (setq-default indent-tabs-mode nil)
 
+  ;;always show line numbers
+  (global-linum-mode)
 
-  ;;show indent guides
+  ;; highlight current line
+  (global-hl-line-mode t)
+
+  ;; highlight matching parentheses
+  (use-package rainbow-delimiters
+    :ensure t
+    :init 
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+    )
+
+  ;; show indent guides
   (use-package highlight-indent-guides
     :ensure t
     :config (progn
@@ -211,3 +223,15 @@
            ("\\.markdown\\'" . markdown-mode))
     :init (setq markdown-command "multimarkdown"))
 #+END_SRC
+
+* Misc stuff
+
+#+BEGIN_SRC emacs-lisp
+  ;; move text  with M-up and M-down
+  (use-package move-text
+    :ensure t
+    :config (progn
+              (move-text-default-bindings)
+              ))
+#+END_SRC
+

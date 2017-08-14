@@ -155,5 +155,12 @@
               (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
               (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
               ))
+
+  ;; matchit!
+  (use-package evil-matchit
+    :ensure t
+    :config (progn
+	      (global-evil-matchit-mode 1)
+              ))
 #+END_SRC
 

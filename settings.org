@@ -3,10 +3,21 @@
 * Interface tweaks
 
 #+BEGIN_SRC emacs-lisp
-(setq inhibit-startup-message t)
-(tool-bar-mode -1)
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq make-backup-files nil)
+  (setq inhibit-startup-message t)
+  (tool-bar-mode -1)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (setq make-backup-files nil)
+  (setq-default indent-tabs-mode nil)
+
+
+  ;;show indent guides
+  (use-package highlight-indent-guides
+    :ensure t
+    :config (progn
+              (setq highlight-indent-guides-method 'character))
+    :init 
+    (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+    )
 #+END_SRC
 
 * try

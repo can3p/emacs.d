@@ -162,5 +162,14 @@
     :config (progn
 	      (global-evil-matchit-mode 1)
               ))
+
+  ;; increase/decrease numbers
+  (use-package evil-numbers
+    :ensure t
+    :config (progn
+              (evil-leader/set-key
+                "a" 'evil-numbers/inc-at-pt
+                "x" 'evil-numbers/dec-at-pt
+              )))
 #+END_SRC
 

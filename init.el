@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (evil-numbers evil-matchit evil-mark-replace evil-nerd-commenter evil-leader which-key use-package try powerline moe-theme evil-args counsel color-theme auto-complete))))
+    (evil-org evil-numbers evil-matchit evil-mark-replace evil-nerd-commenter evil-leader which-key use-package try powerline moe-theme evil-args counsel color-theme auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

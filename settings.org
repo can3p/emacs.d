@@ -160,7 +160,7 @@
   (use-package evil-matchit
     :ensure t
     :config (progn
-	      (global-evil-matchit-mode 1)
+              (global-evil-matchit-mode 1)
               ))
 
   ;; increase/decrease numbers
@@ -171,5 +171,14 @@
                 "a" 'evil-numbers/inc-at-pt
                 "x" 'evil-numbers/dec-at-pt
               )))
+
+  (use-package evil-org
+    :ensure t
+    :after org
+    :config
+    (add-hook 'org-mode-hook 'evil-org-mode)
+    (add-hook 'evil-org-mode-hook
+              (lambda ()
+                (evil-org-set-key-theme))))
 #+END_SRC
 

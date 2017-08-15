@@ -102,23 +102,6 @@
       ))
 #+END_SRC
   
-* Themes and modeline
-#+BEGIN_SRC emacs-lisp
-  (use-package color-theme
-    :ensure t)
-
-  (use-package moe-theme
-    :ensure t)
-
-  (moe-dark)
-
-  (use-package powerline
-    :ensure t
-    :config
-    (powerline-moe-theme)
-    )
-#+END_SRC
-
 * Evil mode
 #+BEGIN_SRC emacs-lisp
   (use-package undo-tree
@@ -218,6 +201,29 @@
               (evil-leader/set-key
                 "sa" 'evil-lion-left
                 "sA" 'evil-lion-right)))
+#+END_SRC
+
+* Themes and modeline
+#+BEGIN_SRC emacs-lisp
+  (use-package color-theme
+    :ensure t)
+
+  (use-package moe-theme
+    :ensure t)
+
+  (moe-dark)
+
+  (use-package powerline
+    :ensure t
+    :config
+    (powerline-moe-theme)
+    )
+
+  (use-package powerline-evil
+    :ensure t
+    :config
+    (powerline-evil-center-color-theme)
+    )
 #+END_SRC
 
 * Markdown

@@ -1,5 +1,11 @@
 #+STARTUP: overview
 
+* General settings
+  
+#+BEGIN_SRC emacs-lisp
+  (setq tramp-default-method "ssh")
+#+END_SRC
+
 * Interface tweaks
 
 #+BEGIN_SRC emacs-lisp

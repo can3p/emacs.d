@@ -4,6 +4,9 @@
   
 #+BEGIN_SRC emacs-lisp
   (setq tramp-default-method "ssh")
+  (scroll-bar-mode -1)
+  (custom-set-variables
+    '(initial-frame-alist (quote ((fullscreen . maximized)))))
 #+END_SRC
 
 * Interface tweaks

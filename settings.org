@@ -81,8 +81,17 @@
     :config
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t)
-    (setq ivy-display-style 'fancy))
+    (setq ivy-display-style 'fancy)
+    (setq ivy-re-builders-alist
+      '((t . ivy--regex-fuzzy))))
 
+  (use-package ivy-rich
+    :ensure t
+    :config
+      (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)
+      (setq ivy-virtual-abbreviate 'full
+        ivy-rich-switch-buffer-align-virtual-buffer t)
+      (setq ivy-rich-abbreviate-paths t))
 
   (use-package swiper
     :ensure t
@@ -91,13 +100,7 @@
            ("C-c C-r" . ivy-resume)
            ("M-x" . counsel-M-x)
            ("C-x C-f" . counsel-find-file))
-    :config
-    (progn
-      (ivy-mode 1)
-      (setq ivy-use-virtual-buffers t)
-      (setq ivy-display-style 'fancy)
-      (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
-      ))
+           )
 #+END_SRC
 
 * Autocomplete
@@ -128,7 +131,7 @@
 
   (evil-leader/set-key
     "be" 'find-file
-    "bb" 'switch-to-buffer
+    "bb" 'ivy-switch-buffer
     "bk" 'kill-buffer)
 
   (use-package evil

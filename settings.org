@@ -226,8 +226,11 @@
 
   (use-package moe-theme
     :ensure t)
-
-  (moe-dark)
+    
+  (use-package solarized-theme
+    :ensure t
+    :config
+      (load-theme 'solarized-dark t))
 
   (use-package powerline
     :ensure t

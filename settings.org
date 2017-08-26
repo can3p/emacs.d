@@ -136,6 +136,10 @@
     :config (progn
               (add-to-list 'load-path "~/.emacs.d/evil")
               (evil-mode 1)))
+              
+  ;; we want this to treat underscore as a part of the word
+  (with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol))
 
   ;; commenting things
   (use-package evil-nerd-commenter

@@ -39,6 +39,10 @@
     :init 
     (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
     )
+    
+   ;; highlight matching parentheses
+   (setq show-paren-delay 0)
+   (show-paren-mode 1)
 #+END_SRC
 
 * try
@@ -255,6 +259,20 @@
            ("\\.md\\'" . markdown-mode)
            ("\\.markdown\\'" . markdown-mode))
     :init (setq markdown-command "multimarkdown"))
+#+END_SRC
+
+* Slime
+
+#+BEGIN_SRC emacs-lisp
+  (use-package slime
+    :ensure t
+    :config
+      (load (expand-file-name "~/.roswell/lisp/quicklisp/slime-helper.el"))
+      (setq inferior-lisp-program "ros -L sbcl -Q run")
+      (setq slime-contribs '(slime-fancy
+                             slime-indentation
+                             slime-sbcl-exts
+                             slime-scratch)))
 #+END_SRC
 
 * Misc stuff

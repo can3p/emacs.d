@@ -7,6 +7,11 @@
   (scroll-bar-mode -1)
   (custom-set-variables
     '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+  ;disable backup
+  (setq backup-inhibited t)
+  ;disable auto save
+  (setq auto-save-default nil)
 #+END_SRC
 
 * Interface tweaks
@@ -288,6 +293,7 @@
     :config
       (load (expand-file-name "~/.roswell/lisp/quicklisp/slime-helper.el"))
       (setq inferior-lisp-program "ros -L sbcl -Q run")
+      ;;(setq inferior-lisp-program "ros -L ecl -Q run")
       (setq slime-contribs '(slime-fancy
                              slime-indentation
                              slime-sbcl-exts

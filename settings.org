@@ -253,12 +253,9 @@
     :ensure t)
 
   (use-package moe-theme
-    :ensure t)
-    
-  (use-package solarized-theme
-    :ensure t
-    :config
-      (load-theme 'solarized-dark t))
+     :ensure t
+     :config
+       (load-theme 'moe-dark t))
 
   (use-package powerline
     :ensure t

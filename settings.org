@@ -297,9 +297,11 @@
     :config
       (load (expand-file-name "~/.roswell/lisp/quicklisp/slime-helper.el"))
       (setq inferior-lisp-program "ros -L sbcl -Q run")
+      (setq slime-enable-evaluate-in-emacs t) ; needed to display images
       ;;(setq inferior-lisp-program "ros -L ecl -Q run")
       (setq slime-contribs '(slime-fancy
                              slime-indentation
+                             slime-media
                              slime-sbcl-exts
                              slime-scratch)))
 #+END_SRC

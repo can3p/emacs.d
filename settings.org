@@ -307,6 +307,24 @@
                              slime-scratch)))
 #+END_SRC
 
+
+* Clojure
+
+#+BEGIN_SRC emacs-lisp
+  (use-package cider
+    :ensure t)
+#+END_SRC
+
+* Scheme
+
+#+BEGIN_SRC emacs-lisp
+  (use-package scheme
+    :ensure t
+    :config
+      (load (expand-file-name "~/code/gerbil/etc/gerbil.el"))
+      )
+#+END_SRC
+
 * Web development
 
 #+BEGIN_SRC emacs-lisp

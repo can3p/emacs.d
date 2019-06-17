@@ -293,16 +293,13 @@
 * Slime
 
 #+BEGIN_SRC emacs-lisp
-  (use-package slime
-    :ensure t
-    :config
-      (load (expand-file-name "~/.roswell/helper.el"))
-      (setq slime-enable-evaluate-in-emacs t) ; needed to display images
-      (setq slime-contribs '(slime-fancy
-                             slime-indentation
-                             slime-media
-                             slime-sbcl-exts
-                             slime-scratch)))
+(load (expand-file-name "~/.roswell/helper.el"))
+(setq slime-enable-evaluate-in-emacs t) ; needed to display images
+(setq slime-contribs '(slime-fancy
+                        slime-indentation
+                        slime-media
+                        slime-sbcl-exts
+                        slime-scratch))
 #+END_SRC
 
 

@@ -5,3 +5,5 @@ auto-save-list
 ac-comphist.dat
 settings.el
 recentf
+session.*
+transient

@@ -338,6 +338,17 @@
     (org-journal-dir "/home/can3p/code/projects/org-roam/")
     (org-journal-date-format "%A, %d %B %Y")
     :ensure t)
+
+  (use-package deft
+    :after org
+    :bind
+    ("C-c n d" . deft)
+    :custom
+    (deft-recursive t)
+    (deft-use-filter-string-for-filename t)
+    (deft-default-extension "org")
+    (deft-directory "/home/can3p/code/projects/org-roam/")
+    :ensure t)
 #+END_SRC
 
 * Web development

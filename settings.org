@@ -250,13 +250,14 @@
 
 * Themes and modeline
 #+BEGIN_SRC emacs-lisp
-  (use-package color-theme
-    :ensure t)
+;;  (use-package color-theme
+;;    :ensure t)
 
   (use-package moe-theme
      :ensure t
      :config
-       (load-theme 'moe-dark t))
+       (moe-dark))
+       ;;(load-theme 'moe-dark t))
 
   (use-package powerline
     :ensure t
@@ -310,15 +311,6 @@
     :ensure t)
 #+END_SRC
 
-* Scheme
-
-#+BEGIN_SRC emacs-lisp
-  (use-package scheme
-    :ensure t
-    :config
-      (load (expand-file-name "~/code/gerbil/etc/gerbil.el"))
-      )
-#+END_SRC
 
 * Web development
 

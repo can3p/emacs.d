@@ -312,6 +312,34 @@
 #+END_SRC
 
 
+* Org-roam
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-roam
+    :hook 
+    (after-init . org-roam-mode)
+    :quelpa (org-roam :fetcher github :repo "jethrokuan/org-roam" :branch "develop")
+    :custom
+    (org-roam-directory "/home/can3p/code/projects/org-roam/")
+    :bind (:map org-roam-mode-map
+          (("C-c n l" . org-roam)
+          ;("C-c n j" . org-roam-today)
+          ("C-c n f" . org-roam-find-file)
+          ("C-c n g" . org-roam-show-graph))
+          :map org-mode-map
+          (("C-c n i" . org-roam-insert))))
+
+  (use-package org-journal
+    :bind
+    ("C-c n j" . org-journal-new-entry)
+    :custom
+    (org-journal-date-prefix "#+TITLE: ")
+    (org-journal-file-format "%Y-%m-%d.org")
+    (org-journal-dir "/home/can3p/code/projects/org-roam/")
+    (org-journal-date-format "%A, %d %B %Y")
+    :ensure t)
+#+END_SRC
+
 * Web development
 
 #+BEGIN_SRC emacs-lisp

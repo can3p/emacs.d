@@ -9,6 +9,19 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://github.com/quelpa/quelpa/raw/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+
+
 (org-babel-load-file (expand-file-name "~/.emacs.d/settings.org"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -21,7 +34,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (cider web-mode magit persp-projectile projectile perspective edit-indirect slime ivy-rich solarized-theme powerline-evil evil-lion move-text highlight-parentheses markdown-mode highlight-indent-guides evil-surround evil-org evil-numbers evil-matchit evil-mark-replace evil-nerd-commenter evil-leader which-key use-package try powerline moe-theme evil-args counsel color-theme auto-complete))))
+    (org-roam cider web-mode magit persp-projectile projectile perspective edit-indirect slime ivy-rich solarized-theme powerline-evil evil-lion move-text highlight-parentheses markdown-mode highlight-indent-guides evil-surround evil-org evil-numbers evil-matchit evil-mark-replace evil-nerd-commenter evil-leader which-key use-package try powerline moe-theme evil-args counsel color-theme auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

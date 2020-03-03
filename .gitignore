@@ -7,3 +7,6 @@ settings.el
 recentf
 session.*
 transient
+org-journal.cache
+quelpa/
+
